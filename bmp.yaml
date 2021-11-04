@@ -1,0 +1,33 @@
+esphome:
+  name: second
+  platform: ESP8266
+  board: nodemcuv2
+
+logger:
+
+api:
+  password: "dimadima"
+
+ota:
+  password: "dimadima"
+
+wifi:
+  ssid: "TP-Link_513C"
+  password: "55955430"
+
+i2c:
+  sda: D6
+  scl: D5
+  scan: True
+
+sensor:
+  - platform: bme280
+    temperature:
+      name: "bme280_temperature"
+      oversampling: 16x
+    pressure:
+      name: "bme280_pressure"
+    humidity:
+      name: "bme280_humidity"
+    address: 0x76
+    update_interval: 60s
